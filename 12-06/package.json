@@ -1,0 +1,22 @@
+{
+    "name": "12-06",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "server": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Inga",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "install": "^0.13.0",
+        "nodemon": "^2.0.20",
+        "npm": "^9.1.3"
+    }
+}
