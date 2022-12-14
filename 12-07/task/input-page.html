@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <!-- Pasirašyti front-end aplikaciją atskirame folderyje, kuriame būtu du puslapiai. 
+Vienas puslapis atvaizduotų automobilius lentelėje, sekantis puslapis automobilio 
+pridėjimas su laukais make, model ir color. -->
+    <body>
+        <form id="form-car">
+            <input type="text" name="make" placeholder="Car make" required />
+            <input type="text" name="model" placeholder="Car model" required />
+            <input type="text" name="color" placeholder="Car color" required />
+            <button>Sumbit</button>
+        </form>
+
+        <script>
+            const form = document.querySelector("#form-car");
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                const make = event.target.elements.make.value;
+                const model = event.target.elements.model.value;
+                const color = event.target.elements.color.value;
+
+                fetch("http://localhost:3000/cars", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        make: make,
+                        model: model,
+                        color: color,
+                    }),
+                })
+                    .then((response) => {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                    })
+                    .then((result) => {
+                        console.log(result);
+                    });
+            });
+        </script>
+    </body>
+</html>

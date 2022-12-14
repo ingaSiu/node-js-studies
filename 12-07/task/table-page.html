@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Id</th>
+            </thead>
+            <tbody id="table-content"></tbody>
+        </table>
+
+        <script>
+            const tbody = document.querySelector("#table-content");
+
+            const renderCar = (car) => {
+                const row = document.createElement("tr");
+                const makeCol = document.createElement("td");
+                const modelCol = document.createElement("td");
+                const colorCol = document.createElement("td");
+                const idCol = document.createElement("td");
+
+                makeCol.textContent = car.make;
+                row.append(makeCol);
+
+                modelCol.textContent = car.model;
+                row.append(modelCol);
+
+                colorCol.textContent = car.color;
+                row.append(colorCol);
+
+                idCol.textContent = car.id;
+                row.append(idCol);
+
+                tbody.append(row);
+            };
+
+            const renderAll = (cars) => {
+                cars.forEach((car) => {
+                    renderCar(car);
+                });
+            };
+
+            fetch("http://localhost:3000/cars", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                })
+                .then((cars) => {
+                    console.log(cars[2]);
+                    renderAll(cars);
+                });
+        </script>
+    </body>
+</html>
