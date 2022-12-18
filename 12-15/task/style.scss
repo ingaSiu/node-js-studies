@@ -1,0 +1,6 @@
+.clicked {
+  background-color: darkgreen;
+  &:hover {
+    background-color: green;
+  }
+}
