@@ -116,7 +116,7 @@ app.delete('/posts/:id', async (req, res) => {
     if (id) {
       const con = await client.connect();
       const filter = { _id: ObjectId(id) };
-      const data = await con.db('third').collection('data').delete(filter);
+      const data = await con.db('third').collection('data').deleteOne(filter);
       await con.close();
       res.send(data);
     } else {

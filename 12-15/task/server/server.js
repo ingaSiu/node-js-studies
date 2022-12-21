@@ -59,20 +59,3 @@ app.post('/pets', async (req, res) => {
     res.status(500).send({ error });
   }
 });
-
-app.get('/pets/:type', async (req, res) => {
-  try {
-    const type = req.params.type;
-    const con = await client.connect();
-    const filter = { type: type };
-    const data = await con
-      .db('fifth')
-      .collection('pets')
-      .find(filter)
-      .toArray();
-    await con.close();
-    res.send(data);
-  } catch (error) {
-    res.status(500).send({ error });
-  }
-});

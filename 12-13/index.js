@@ -23,11 +23,31 @@ const client = new MongoClient(uri);
 app.use(cors());
 app.use(express.json());
 
-// pasirasom route, kuris tiesiog pasakys, kad viskas veikia
+//ternary israiska: jeigu yra {brand} tai grazina objects su irasyta brand
+//jei yra {} tai grazina viska
+//kaip padaryti, kad butu to lowercase??
 app.get('/', async (req, res) => {
+  const { brand, sort } = req.query;
+  /*
+  const brand = req.query.brand;
+  const sort = re.query.sort;
+  */
   try {
     const con = await client.connect(); //prisijungimas prie duomenu bazes
-    const data = await con.db('first').collection('cars').find().toArray(); // duomenu istraukimas
+    const data = await con
+      .db('first')
+      .collection('cars')
+      .find(brand ? { brand } : {})
+      .sort(sort ? { brand: sort === 'asc' ? 1 : -1 } : {}) //asc || kitu atveju daro descending
+      /*
+      let sortNumber;
+      if (sort === 'asc') {
+        sortNumber = 1;
+      } else {
+        sortNumber = -1;
+      }
+      */
+      .toArray(); // duomenu istraukimas
     await con.close(); // DB prisijungimo isjungimas
     res.send(data);
   } catch (error) {
@@ -35,13 +55,46 @@ app.get('/', async (req, res) => {
   }
 });
 
+//neveikia sitas, neparodo object by id
+// app.get('/:id', async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const con = await client.connect(); //prisijungimas prie duomenu bazes
+//     const data = await con.db('first').collection('cars').findOne(ObjectId(id));
+//     await con.close(); // DB prisijungimo isjungimas
+//     res.send(data);
+//   } catch (error) {
+//     res.status(500).send({ error });
+//   }
+// });
+
+//pavyzdys kaip surasti po kelis brand is karto:
+//split splttins uzrasytus brand per kableli
+//jei viena brand, tai vietoj brand.spilt rasom [brand]
+// app.get('/', async (req, res) => {
+//   const { brand, sort } = req.query;
+//   try {
+//     const con = await client.connect();
+//     const data = await con
+//       .db('first')
+//       .collection('cars')
+//       .find(brand ? { $or: [{ brand: { $in: brand.split(',') } }] } : {})
+//       .sort(sort ? { brand: sort === 'asc' ? 1 : -1 } : {})
+//       .toArray();
+//     await con.close();
+//     res.send(data);
+//   } catch (error) {
+//     res.status(500).send({ error });
+//   }
+// });
+
 app.post('/', async (req, res) => {
   try {
     const con = await client.connect(); //prisijungimas prie duomenu bazes
     const data = await con
       .db('first')
       .collection('cars')
-      .insertOne({ brand: 'VW', model: 'Polo' });
+      .insertOne({ brand: req.body.brand, model: req.body.model });
     await con.close(); // DB prisijungimo isjungimas
     res.send(data);
   } catch (error) {
