@@ -25,12 +25,21 @@ const renderOne = (membership) => {
   name.textContent = `${membership.price} ${membership.name}`;
 
   const description = document.createElement('p');
+  description.setAttribute('class', 'description-txt');
   description.textContent = `${membership.description}`;
+
+  const hr = document.createElement('HR');
+  hr.setAttribute('class', 'line');
 
   const delBtn = document.createElement('button');
   delBtn.setAttribute('class', 'del-btn');
   delBtn.setAttribute('value', membership._id);
-  delBtn.textContent = 'Delete';
+
+  const btnIcon = document.createElement('i');
+  btnIcon.setAttribute('class', 'fa-solid fa-trash');
+  delBtn.append(btnIcon);
+
+  // delBtn.textContent = 'Delete';
   delBtn.addEventListener('click', (event) => {
     console.log('clicked');
 
@@ -58,6 +67,7 @@ const renderOne = (membership) => {
 
   cardDiv.append(name);
   cardDiv.append(description);
+  cardDiv.append(hr);
   cardDiv.append(delBtn);
 
   cardWrapper.append(cardDiv);

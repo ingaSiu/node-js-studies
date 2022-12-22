@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="service.css" />
     <script defer src="service.js"></script>
+    <script
+      src="https://kit.fontawesome.com/318d4eaf82.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
   <body>
@@ -24,26 +28,43 @@
           not deleting or deactivating packages assigned to active users.
         </p>
       </div>
-
-      <button id="create-new-membership">+ New Membership</button>
+      <div>
+        <button id="create-new-membership" class="new-btn">
+          + &nbsp;&nbsp; &nbsp;New Membership
+        </button>
+      </div>
     </div>
 
     <div id="test" class="membership-form-wrapper" style="display: none">
       <h1>Create membership</h1>
       <form id="create-membership">
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Name" required />
-        <label>Membership Price</label>
-        <input
-          type="text"
-          name="price"
-          placeholder="Membership Price"
-          required
-        />
-        <label>Description</label>
-        <textarea type="text" name="description" required></textarea>
-        <button type="reset">Cancel</button>
-        <button>New Membership</button>
+        <div class="name">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Name" required />
+        </div>
+        <div class="price">
+          <label>Membership Price</label>
+          <input
+            type="text"
+            name="price"
+            placeholder="Membership Price"
+            required
+          />
+        </div>
+        <div class="description">
+          <label>Description</label>
+          <textarea
+            type="text"
+            name="description"
+            rows="4"
+            cols="30"
+            required
+          ></textarea>
+        </div>
+        <div class="btns">
+          <button class="cancel" type="reset">Cancel</button>
+          <button class="new-btn">New Membership</button>
+        </div>
       </form>
       <p id="success-message">Membership succesfully added</p>
     </div>

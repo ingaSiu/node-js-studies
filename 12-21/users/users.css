@@ -1,5 +1,132 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+body .all-info {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  min-height: 100vh;
+  margin: 0;
+}
+body .all-info .pg-head {
+  margin-left: 150px;
+  margin-right: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+body .all-info .pg-head h1 {
+  font-weight: 400;
+}
+body .all-info .main-btn {
+  border: none;
+  background-color: darkorchid;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 110px;
+  height: 35px;
+  padding-left: 5px;
+}
+body .all-info .main-btn:hover {
+  background-color: cornflowerblue;
+}
+body .all-info .create-user-wrapper {
+  display: none;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+}
+body .all-info .create-user-wrapper h1 {
+  font-weight: lighter;
+}
+body .all-info .create-user-wrapper #create-user {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+body .all-info .create-user-wrapper #create-user .inputs-div {
+  display: flex;
+  margin: 20px;
+  gap: 10px;
+  width: 100%;
+  background-color: white;
+}
+body .all-info .create-user-wrapper #create-user .inputs-div .info-div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+body .all-info .create-user-wrapper #create-user .inputs-div .info-div #select {
+  width: 55%;
+}
+body .all-info .create-user-wrapper #create-user .inputs-div .surname-div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+body .all-info .create-user-wrapper #create-user .inputs-div input,
+body .all-info .create-user-wrapper #create-user .inputs-div #select {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 10px;
+  padding: 10px;
+}
+body .all-info .create-user-wrapper #create-user .inputs-div label {
+  font-weight: bold;
+  padding: 10px;
+}
+body .all-info .create-user-wrapper #create-user .inputs-div label span {
+  color: red;
+}
+body .all-info .create-user-wrapper #create-user .btn-div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+}
+body .all-info .create-user-wrapper #create-user .btn-div .btn-cancel {
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+body .all-info .create-user-wrapper #create-user .btn-div .btn-cancel:hover {
+  background-color: lavender;
+}
+body .all-info h3 {
+  text-align: center;
+}
+body .all-info #user-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+  gap: 20px;
+}
+body .all-info #user-cards-wrapper .user-card {
+  border: 2px solid lightgray;
+  background-color: white;
+  padding: 20px;
+  width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+body .all-info #user-cards-wrapper .user-card span {
+  color: blue;
+}
+body .all-info #user-cards-wrapper .user-card .user-name {
+  color: grey;
+  font-weight: bolder;
+  padding-bottom: 20px;
+}
+body .all-info footer {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 20px;
 }
 body .navigation ul {
   display: flex;
@@ -16,110 +143,4 @@ body .navigation ul a:visited {
 }
 body .navigation ul li {
   list-style: none;
-}
-body .pg-head {
-  margin-left: 150px;
-  margin-right: 150px;
-  display: flex;
-  justify-content: space-between;
-}
-body .pg-head h1 {
-  font-weight: 400;
-}
-body .main-btn {
-  border: none;
-  background-color: darkorchid;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  width: 100px;
-  height: 30px;
-}
-body .main-btn:hover {
-  background-color: cornflowerblue;
-}
-body .create-user-wrapper {
-  display: none;
-  flex-direction: column;
-  width: 70%;
-  margin: auto;
-}
-body .create-user-wrapper #create-user {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-body .create-user-wrapper #create-user .inputs-div {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-}
-body .create-user-wrapper #create-user .inputs-div .info-div {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-body .create-user-wrapper #create-user .inputs-div .info-div #select {
-  width: 55%;
-}
-body .create-user-wrapper #create-user .inputs-div .surname-div {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-body .create-user-wrapper #create-user .inputs-div input,
-body .create-user-wrapper #create-user .inputs-div #select {
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  margin: 10px;
-  padding: 10px;
-}
-body .create-user-wrapper #create-user .inputs-div label {
-  font-weight: bold;
-  padding: 10px;
-}
-body .create-user-wrapper #create-user .inputs-div label span {
-  color: red;
-}
-body .create-user-wrapper #create-user .btn-div {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 10px;
-}
-body .create-user-wrapper #create-user .btn-div .btn-cancel {
-  border: none;
-  background-color: white;
-  border-radius: 5px;
-  font-weight: bold;
-}
-body .create-user-wrapper #create-user .btn-div .btn-cancel:hover {
-  background-color: lavender;
-}
-body h3 {
-  text-align: center;
-}
-body #user-cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px;
-  gap: 20px;
-}
-body #user-cards-wrapper .user-card {
-  border: 2px solid lightgray;
-  padding: 20px;
-  width: 350px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-body #user-cards-wrapper .user-card span {
-  color: blue;
-}
-body #user-cards-wrapper .user-card .user-name {
-  color: grey;
-  font-weight: bolder;
-  padding-bottom: 20px;
 }/*# sourceMappingURL=users.css.map */

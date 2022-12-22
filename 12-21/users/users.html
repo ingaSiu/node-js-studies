@@ -15,50 +15,56 @@
         <li><a href="./users.html">Users</a></li>
       </ul>
     </nav>
+    <div class="all-info">
+      <div class="pg-head">
+        <h1>User Management</h1>
+        <button id="show-form" class="main-btn">+ &nbsp; New User</button>
+      </div>
 
-    <div class="pg-head">
-      <h1>User Management</h1>
-      <button id="show-form" class="main-btn"><span> + </span> New User</button>
-    </div>
+      <div class="create-user-wrapper" style="display: none">
+        <h1>Create user</h1>
+        <form id="create-user">
+          <div class="inputs-div">
+            <div class="info-div">
+              <label>First Name <span>*</span></label>
+              <input
+                type="text"
+                name="name"
+                placeholder="First Name"
+                required
+              />
+              <label>Email address <span>*</span></label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+              <label>Choose Membership</label>
+              <select id="select" name="selection"></select>
+            </div>
 
-    <div class="create-user-wrapper" style="display: none">
-      <h1>Create user</h1>
-      <form id="create-user">
-        <div class="inputs-div">
-          <div class="info-div">
-            <label>First Name <span>*</span></label>
-            <input type="text" name="name" placeholder="First Name" required />
-            <label>Email address <span>*</span></label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-            />
-            <label>Choose Membership</label>
-            <select id="select" name="selection"></select>
+            <div class="surname-div">
+              <label>Last Name <span>*</span></label>
+              <input
+                type="text"
+                name="surname"
+                placeholder="Last Name"
+                required
+              />
+            </div>
           </div>
 
-          <div class="surname-div">
-            <label>Last Name <span>*</span></label>
-            <input
-              type="text"
-              name="surname"
-              placeholder="Last Name"
-              required
-            />
+          <div class="btn-div">
+            <button type="reset" class="btn-cancel">Cancel</button>
+            <button class="main-btn">New user</button>
           </div>
-        </div>
+        </form>
+      </div>
+      <h3>Sorting By Name: <span id="sorting">ASC</span> &#8597;</h3>
+      <div id="user-cards-wrapper"></div>
 
-        <div class="btn-div">
-          <button type="reset" class="btn-cancel">Cancel</button>
-          <button class="main-btn">New user</button>
-        </div>
-      </form>
+      <footer>Copyright 2021 Membership Manager</footer>
     </div>
-    <h3>Sorting By Name: <span id="sorting">ASC</span> &#8597;</h3>
-    <div id="user-cards-wrapper"></div>
-
-    <footer>Copyright 2021 Membership Manager</footer>
   </body>
 </html>

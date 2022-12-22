@@ -35,7 +35,6 @@ const renderSelectOptions = () => {
         memberships.forEach((element) => {
           const option = document.createElement('option');
           option.setAttribute('value', element._id);
-          option.setAttribute('class', 'option');
           option.textContent = element.name;
 
           select.append(option);
