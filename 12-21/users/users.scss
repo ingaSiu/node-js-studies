@@ -1,0 +1,132 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  .navigation {
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 25px;
+        &:visited {
+          color: inherit;
+        }
+      }
+      li {
+        list-style: none;
+      }
+    }
+  }
+  .pg-head {
+    margin-left: 150px;
+    margin-right: 150px;
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      font-weight: 400;
+    }
+  }
+  .main-btn {
+    border: none;
+    background-color: darkorchid;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    &:hover {
+      background-color: cornflowerblue;
+    }
+  }
+  .create-user-wrapper {
+    display: none;
+
+    // display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    #create-user {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .inputs-div {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        .info-div {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          #select {
+            width: 55%;
+          }
+        }
+        .surname-div {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+        }
+        input,
+        #select {
+          border: 1px solid lightgray;
+          border-radius: 5px;
+          background-color: white;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          margin: 10px;
+          padding: 10px;
+        }
+        label {
+          font-weight: bold;
+          padding: 10px;
+          span {
+            color: red;
+          }
+        }
+      }
+
+      .btn-div {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 10px;
+        .btn-cancel {
+          border: none;
+          background-color: white;
+          border-radius: 5px;
+          font-weight: bold;
+          &:hover {
+            background-color: lavender;
+          }
+        }
+      }
+    }
+  }
+  h3 {
+    text-align: center;
+  }
+  #user-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    gap: 20px;
+    .user-card {
+      border: 2px solid lightgray;
+      padding: 20px;
+      width: 350px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+      span {
+        color: blue;
+      }
+      .user-name {
+        color: grey;
+        font-weight: bolder;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="service.css" />
+    <script defer src="service.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul>
+        <li><a href="./service.html">Memberships</a></li>
+        <li><a href="../users/users.html">Users</a></li>
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+      <div>
+        <h1>Membership Management</h1>
+        <p>
+          Here you can manage your membership packages. Note: Make sure you are
+          not deleting or deactivating packages assigned to active users.
+        </p>
+      </div>
+
+      <button id="create-new-membership">+ New Membership</button>
+    </div>
+
+    <div id="test" class="membership-form-wrapper" style="display: none">
+      <h1>Create membership</h1>
+      <form id="create-membership">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Name" required />
+        <label>Membership Price</label>
+        <input
+          type="text"
+          name="price"
+          placeholder="Membership Price"
+          required
+        />
+        <label>Description</label>
+        <textarea type="text" name="description" required></textarea>
+        <button type="reset">Cancel</button>
+        <button>New Membership</button>
+      </form>
+      <p id="success-message">Membership succesfully added</p>
+    </div>
+
+    <div id="membership-cards"></div>
+
+    <footer>Copyright 2021 Membership Manager</footer>
+  </body>
+</html>

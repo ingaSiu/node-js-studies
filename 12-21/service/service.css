@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body .navigation ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+body .navigation ul a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 25px;
+}
+body .navigation ul a:visited {
+  color: inherit;
+}
+body .navigation ul li {
+  list-style: none;
+}
+body .wrapper {
+  display: flex;
+}
+body .wrapper button {
+  width: 100px;
+  height: 50px;
+}
+body #membership-cards {
+  display: flex;
+}
+body #membership-cards .card-div {
+  border: 1px solid black;
+  margin: 20px;
+}
+body .membership-form-wrapper {
+  display: none;
+  margin: 20px;
+  width: 70%;
+  align-items: flex-start;
+  border: 1px solid black;
+  flex-direction: column;
+}
+body .membership-form-wrapper #create-membership {
+  margin: 20px;
+  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+}
+body .membership-form-wrapper #success-message {
+  display: none;
+}/*# sourceMappingURL=service.css.map */
