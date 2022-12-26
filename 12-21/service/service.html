@@ -19,58 +19,60 @@
         <li><a href="../users/users.html">Users</a></li>
       </ul>
     </nav>
-
-    <div class="wrapper">
-      <div>
-        <h1>Membership Management</h1>
-        <p>
-          Here you can manage your membership packages. Note: Make sure you are
-          not deleting or deactivating packages assigned to active users.
-        </p>
+    <div class="all-wrap">
+      <div class="wrapper">
+        <div>
+          <h1>Membership Management</h1>
+          <p>
+            Here you can manage your membership packages. Note: Make sure you
+            are not deleting or deactivating packages assigned to active users.
+          </p>
+        </div>
+        <div>
+          <button id="create-new-membership" class="new-btn">
+            + &nbsp; &nbsp; &nbsp;New Membership
+          </button>
+        </div>
       </div>
-      <div>
-        <button id="create-new-membership" class="new-btn">
-          + &nbsp;&nbsp; &nbsp;New Membership
-        </button>
+
+      <div id="test" class="membership-form-wrapper">
+        <!-- style="display: none" -->
+        <h1>Create membership</h1>
+        <form id="create-membership">
+          <div class="name">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" required />
+          </div>
+          <div class="price">
+            <label>Membership Price</label>
+            <input
+              type="text"
+              name="price"
+              placeholder="Membership Price"
+              required
+            />
+          </div>
+          <div class="description">
+            <label class="desc-label">Description</label>
+            <textarea
+              type="text"
+              name="description"
+              rows="4"
+              cols="50"
+              required
+            ></textarea>
+          </div>
+          <div class="btns">
+            <button class="cancel" type="reset">Cancel</button>
+            <button class="new-btn">New Membership</button>
+          </div>
+        </form>
+        <p id="success-message">Membership succesfully added</p>
       </div>
+
+      <div id="membership-cards"></div>
+
+      <footer>Copyright 2021 Membership Manager</footer>
     </div>
-
-    <div id="test" class="membership-form-wrapper" style="display: none">
-      <h1>Create membership</h1>
-      <form id="create-membership">
-        <div class="name">
-          <label>Name</label>
-          <input type="text" name="name" placeholder="Name" required />
-        </div>
-        <div class="price">
-          <label>Membership Price</label>
-          <input
-            type="text"
-            name="price"
-            placeholder="Membership Price"
-            required
-          />
-        </div>
-        <div class="description">
-          <label>Description</label>
-          <textarea
-            type="text"
-            name="description"
-            rows="4"
-            cols="30"
-            required
-          ></textarea>
-        </div>
-        <div class="btns">
-          <button class="cancel" type="reset">Cancel</button>
-          <button class="new-btn">New Membership</button>
-        </div>
-      </form>
-      <p id="success-message">Membership succesfully added</p>
-    </div>
-
-    <div id="membership-cards"></div>
-
-    <footer>Copyright 2021 Membership Manager</footer>
   </body>
 </html>

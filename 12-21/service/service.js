@@ -28,8 +28,12 @@ const renderOne = (membership) => {
   description.setAttribute('class', 'description-txt');
   description.textContent = `${membership.description}`;
 
-  const hr = document.createElement('HR');
-  hr.setAttribute('class', 'line');
+  const userCount = document.createElement('p');
+  userCount.setAttribute('class', 'count-txt');
+  userCount.textContent = `Total subscriptions: ${membership.userCount}`;
+
+  // const hr = document.createElement('HR');
+  // hr.setAttribute('class', 'line');
 
   const delBtn = document.createElement('button');
   delBtn.setAttribute('class', 'del-btn');
@@ -43,31 +47,38 @@ const renderOne = (membership) => {
   delBtn.addEventListener('click', (event) => {
     console.log('clicked');
 
-    fetch(`http://localhost:3000/memberships/${event.target.value}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
+    let isConfirmed = confirm(
+      'Users will lose their subscription. Do you really want to delete?',
+    );
+
+    if (isConfirmed) {
+      fetch(`http://localhost:3000/memberships/${event.target.value}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       })
-      .then((data) => {
-        if (data && data.deletedCount > 0) {
-          membershipsArr = membershipsArr.filter((membership) => {
-            return event.target.value !== membership._id;
-          });
-          renderAll(membershipsArr);
-        }
-        console.log(data);
-      });
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+        })
+        .then((data) => {
+          if (data && data.deletedCount > 0) {
+            membershipsArr = membershipsArr.filter((membership) => {
+              return event.target.value !== membership._id;
+            });
+            renderAll(membershipsArr);
+          }
+          console.log(data);
+        });
+    }
   });
 
   cardDiv.append(name);
   cardDiv.append(description);
-  cardDiv.append(hr);
+  cardDiv.append(userCount);
+  // cardDiv.append(hr);
   cardDiv.append(delBtn);
 
   cardWrapper.append(cardDiv);

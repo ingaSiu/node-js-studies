@@ -18,19 +18,24 @@ body .navigation ul a:visited {
 body .navigation ul li {
   list-style: none;
 }
-body .wrapper {
+body .all-wrap {
+  background-color: #edf2f6;
+  min-height: 100vh;
+  margin: 0;
+}
+body .all-wrap .wrapper {
   display: flex;
   justify-content: space-between;
   padding: 20px;
 }
-body .wrapper h1 {
+body .all-wrap .wrapper h1 {
   margin-bottom: 5px;
 }
-body .wrapper p {
+body .all-wrap .wrapper p {
   margin-top: 0;
   font-size: 15px;
 }
-body .new-btn {
+body .all-wrap .new-btn {
   width: 180px;
   height: 40px;
   border: none;
@@ -40,13 +45,14 @@ body .new-btn {
   font-size: small;
   font-weight: bold;
 }
-body .new-btn:hover {
+body .all-wrap .new-btn:hover {
   background-color: indigo;
 }
-body #membership-cards {
+body .all-wrap #membership-cards {
   display: flex;
+  justify-content: center;
 }
-body #membership-cards .card-div {
+body .all-wrap #membership-cards .card-div {
   display: flex;
   flex-direction: column;
   border: 1px solid lightgray;
@@ -54,66 +60,97 @@ body #membership-cards .card-div {
   width: 400px;
   height: 200px;
   margin: 20px;
+  background-color: white;
 }
-body #membership-cards .card-div p {
+body .all-wrap #membership-cards .card-div p {
   text-align: center;
   font-weight: bold;
   padding-top: 10px;
   margin-bottom: 0;
 }
-body #membership-cards .card-div .description-txt {
+body .all-wrap #membership-cards .card-div .description-txt {
   font-weight: lighter;
   font-size: 11px;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
   margin-bottom: 0px;
 }
-body #membership-cards .card-div .line {
-  width: 100%;
-  color: lightgrey;
+body .all-wrap #membership-cards .card-div .count-txt {
+  font-size: smaller;
+  margin: 0;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 5px;
 }
-body #membership-cards .card-div .del-btn {
+body .all-wrap #membership-cards .card-div .del-btn {
   align-self: flex-end;
   border: none;
   border-radius: 5px;
   padding: 15px;
   background-color: pink;
-  margin: 15px;
+  margin: 8px;
 }
-body #membership-cards .card-div .del-btn:hover {
+body .all-wrap #membership-cards .card-div .del-btn:hover {
   background-color: palevioletred;
 }
-body #membership-cards .card-div .del-btn .fa-trash {
+body .all-wrap #membership-cards .card-div .del-btn .fa-trash {
   color: red;
 }
-body .membership-form-wrapper {
-  margin: 20px;
+body .all-wrap .membership-form-wrapper {
   width: 100%;
   align-items: center;
+  display: flex;
   flex-direction: column;
 }
-body .membership-form-wrapper #create-membership {
-  border: 1px solid black;
+body .all-wrap .membership-form-wrapper #create-membership {
+  border: 1px solid lightgray;
   margin: 20px;
   gap: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  align-items: center;
+  background-color: white;
 }
-body .membership-form-wrapper #create-membership div {
+body .all-wrap .membership-form-wrapper #create-membership div {
   margin-bottom: 10px;
+  padding: 10px;
 }
-body .membership-form-wrapper #create-membership label {
+body .all-wrap .membership-form-wrapper #create-membership label {
   display: inline-block;
   width: 150px;
   text-align: right;
+  font-weight: bolder;
 }
-body .membership-form-wrapper #create-membership .cancel {
+body .all-wrap .membership-form-wrapper #create-membership input {
+  width: 400px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+body .all-wrap .membership-form-wrapper #create-membership .description {
+  display: flex;
+  align-items: center;
+}
+body .all-wrap .membership-form-wrapper #create-membership .description label {
+  padding-right: 5px;
+}
+body .all-wrap .membership-form-wrapper #create-membership textarea {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width: 400px;
+  height: 150px;
+}
+body .all-wrap .membership-form-wrapper .cancel {
   border: none;
   background-color: white;
   border-radius: 5px;
   font-weight: bold;
   padding: 11px;
 }
-body .membership-form-wrapper #create-membership .cancel:hover {
+body .all-wrap .membership-form-wrapper .cancel:hover {
   background-color: lavender;
 }
-body .membership-form-wrapper #success-message {
+body .all-wrap #success-message {
   display: none;
 }/*# sourceMappingURL=service.css.map */

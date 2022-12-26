@@ -37,7 +37,26 @@ app.get('/memberships', async (req, res) => {
     const data = await con
       .db('membership_task')
       .collection('services')
-      .find()
+      .aggregate([
+        {
+          $lookup: {
+            from: 'users',
+            localField: '_id',
+            foreignField: 'serviceId',
+            as: 'users',
+          },
+        },
+        {
+          $project: {
+            _id: '$_id',
+            name: '$name',
+            price: '$price',
+            description: '$description',
+            //counts the joined users collection on each membership
+            userCount: { $size: '$users' },
+          },
+        },
+      ])
       .toArray();
     //conneciton close creates problems when two requests are made at same time
     //await con.close();
