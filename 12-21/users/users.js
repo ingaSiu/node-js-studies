@@ -3,6 +3,7 @@ const userWrapper = document.querySelector('#user-cards-wrapper');
 
 const showForm = document.querySelector('#show-form');
 const formWrapper = document.querySelector('.create-user-wrapper');
+formWrapper.style.display = 'none';
 
 const sorting = document.querySelector('#sorting');
 

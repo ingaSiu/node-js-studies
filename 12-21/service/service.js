@@ -1,6 +1,7 @@
 const membershipForm = document.querySelector('#create-membership');
 const cardWrapper = document.querySelector('#membership-cards');
 const formWrapper = document.querySelector('.membership-form-wrapper');
+formWrapper.style.display = 'none';
 const showForm = document.querySelector('#create-new-membership');
 
 let membershipsArr = [];
@@ -9,10 +10,8 @@ showForm.addEventListener('click', () => {
   console.log(formWrapper.style);
   console.log(formWrapper.style.display);
   if (formWrapper.style.display === 'none') {
-    console.log('was equal none');
     formWrapper.style.display = 'flex';
   } else {
-    console.log('was not equal none');
     formWrapper.style.display = 'none';
   }
 });
@@ -32,9 +31,6 @@ const renderOne = (membership) => {
   userCount.setAttribute('class', 'count-txt');
   userCount.textContent = `Total subscriptions: ${membership.userCount}`;
 
-  // const hr = document.createElement('HR');
-  // hr.setAttribute('class', 'line');
-
   const delBtn = document.createElement('button');
   delBtn.setAttribute('class', 'del-btn');
   delBtn.setAttribute('value', membership._id);
@@ -43,7 +39,6 @@ const renderOne = (membership) => {
   btnIcon.setAttribute('class', 'fa-solid fa-trash');
   delBtn.append(btnIcon);
 
-  // delBtn.textContent = 'Delete';
   delBtn.addEventListener('click', (event) => {
     console.log('clicked');
 
@@ -70,7 +65,6 @@ const renderOne = (membership) => {
             });
             renderAll(membershipsArr);
           }
-          console.log(data);
         });
     }
   });
@@ -78,7 +72,6 @@ const renderOne = (membership) => {
   cardDiv.append(name);
   cardDiv.append(description);
   cardDiv.append(userCount);
-  // cardDiv.append(hr);
   cardDiv.append(delBtn);
 
   cardWrapper.append(cardDiv);
@@ -134,11 +127,9 @@ membershipForm.addEventListener('submit', (event) => {
     })
     .then((result) => {
       if (result) {
-        const successMsg = document.querySelector('#success-message');
         event.target.elements.name.value = '';
         event.target.elements.price.value = '';
         event.target.elements.description.value = '';
-        successMsg.style.display = 'block';
         console.log(result);
       }
     });

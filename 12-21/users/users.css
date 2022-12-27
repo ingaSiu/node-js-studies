@@ -1,13 +1,17 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 body .all-info {
   display: flex;
   flex-direction: column;
-  background-color: #edf2f6;
-  min-height: 100vh;
+  height: 100%;
   margin: 0;
+  flex-grow: 1;
+  background-color: #edf2f6;
 }
 body .all-info .pg-head {
   margin-left: 150px;
@@ -17,6 +21,9 @@ body .all-info .pg-head {
 }
 body .all-info .pg-head h1 {
   font-weight: 400;
+}
+body .all-info .pg-head #show-form {
+  margin-top: 30px;
 }
 body .all-info .main-btn {
   border: none;
@@ -32,7 +39,7 @@ body .all-info .main-btn:hover {
   background-color: cornflowerblue;
 }
 body .all-info .create-user-wrapper {
-  display: none;
+  display: flex;
   flex-direction: column;
   width: 70%;
   margin: auto;
@@ -123,10 +130,10 @@ body .all-info #user-cards-wrapper .user-card .user-name {
   font-weight: bolder;
   padding-bottom: 20px;
 }
-body .all-info footer {
+body footer {
   text-align: center;
-  padding-top: 100px;
-  padding-bottom: 20px;
+  padding: 10px;
+  background-color: #edf2f6;
 }
 body .navigation ul {
   display: flex;

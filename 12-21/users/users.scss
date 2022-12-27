@@ -1,13 +1,16 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   .all-info {
     display: flex;
     flex-direction: column;
-    background-color: #edf2f6;
-    min-height: 100vh;
+    height: 100%;
     margin: 0;
+    flex-grow: 1;
+    background-color: #edf2f6;
     .pg-head {
       margin-left: 150px;
       margin-right: 150px;
@@ -15,6 +18,9 @@ body {
       justify-content: space-between;
       h1 {
         font-weight: 400;
+      }
+      #show-form {
+        margin-top: 30px;
       }
     }
     .main-btn {
@@ -34,8 +40,7 @@ body {
       h1 {
         font-weight: lighter;
       }
-      display: none;
-      // display: flex;
+      display: flex;
       flex-direction: column;
       width: 70%;
       margin: auto;
@@ -126,13 +131,12 @@ body {
         }
       }
     }
-    footer {
-      text-align: center;
-      padding-top: 100px;
-      padding-bottom: 20px;
-    }
   }
-
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #edf2f6;
+  }
   .navigation {
     ul {
       display: flex;
